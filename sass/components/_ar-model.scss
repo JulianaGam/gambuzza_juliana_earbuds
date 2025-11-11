@@ -99,6 +99,46 @@ model-viewer {
 }
 
 
+.info-cards{
+  width: 100%;
+  max-width: 480px;         
+  margin: 16px auto 32px;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;            
+}
+
+// mobile version of info cards styles
+.info-card{
+  width: 100%;
+  max-width: 360px;          
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 14px 22px -10px rgba(65, 65, 65, 0.25); 
+  padding: 12px 14px;         
+  text-align: center;
+}
+
+
+.info-card h3{
+  font-family: Futura, "Helvetica Neue", sans-serif;
+  font-size: 16px;       
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+
+.info-card p{
+  font-family: Futura, "Helvetica Neue", sans-serif;
+  color: #333;
+  line-height: 20px;      
+  font-weight: 300;
+  font-size: 13px;           
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   model-viewer .Hotspot, .HotspotAnnotation {
     display: none;
