@@ -1,84 +1,310 @@
 (() => {
-// console.log('holiii');
 
+  // VARIABLES
+  const hotspots = document.querySelectorAll(".Hotspot");
+  const infoCardsContainer = document.querySelector(".info-cards");
 
-
-// VARIABLES
-const hotspots = document.querySelectorAll(".Hotspot");
-
+  // the info of my hotspots / cards
   const infoBoxes = [
-
-    { title: "All-Day. All-Week. All Go.",
+    {
+      title: "All-Day. All-Week. All Go.",
       text: "Enjoy up to 36 hours of playtime with the compact, pocket-friendly charging case.",
-      image: "images/model-icons/battery.png" },
-
-    { title: "All-Day comfort",
+      image: "images/model-icons/battery.png"
+    },
+    {
+      title: "All-Day comfort",
       text: "With four ear tip sizes (XS, S, M, L), the acoustic seal adapts for secure fit and sound.",
-      image: "images/model-icons/comfort.png" },
-
-    { title: "Noise Cancelling",
+      image: "images/model-icons/comfort.png"
+    },
+    {
+      title: "Noise Cancelling",
       text: "Active Noise Cancelling continuously blocks external sounds for clear audio.",
-      image: "images/model-icons/noisec.png" },
-
-    { title: "Controls - At Your Fingertips",
+      image: "images/model-icons/noisec.png"
+    },
+    {
+      title: "Controls - At Your Fingertips",
       text: "On-ear controls let you manage music, modes, calls and voice assistant.",
-      image: "images/model-icons/fingertips.png" }
-  ]
-
+      image: "images/model-icons/fingertips.png"
+    }
+  ];
 
   // FUNCTIONS
-function fillInfo() {
-  infoBoxes.forEach((infoBox, index) => {
-    
-    let selected = document.querySelector(`#hotspot${index + 1}`);
 
-    selected.replaceChildren();
+  // this creates the content for the hotspots on desktop
+  function fillHotspots() {
+    infoBoxes.forEach((infoBox, index) => {
+      const selected = document.querySelector(`#hotspot${index + 1}`);
+      if (!selected) return;
 
-    const imageElement = document.createElement('img');
-    imageElement.src = infoBox.image;
-    imageElement.alt = infoBox.title;
+      selected.replaceChildren();
 
-    const titleElement = document.createElement('h2');
-    titleElement.textContent = infoBox.title;
+      const img = document.createElement("img");
+      img.src = infoBox.image;
+      img.alt = infoBox.title;
 
-    const textElement = document.createElement('p');
-    textElement.textContent = infoBox.text;
+      const title = document.createElement("h2");
+      title.textContent = infoBox.title;
+
+      const text = document.createElement("p");
+      text.textContent = infoBox.text;
+
+      selected.appendChild(img);
+      selected.appendChild(title);
+      selected.appendChild(text);
+    });
+  }
+
+  // this creates and shows the cards for mobile view
+  function fillMobileCards() {
+    if (!infoCardsContainer) return;
+
+    // this helps to avoid duplicating cards on resize
+    infoCardsContainer.innerHTML = "";
+
+    infoBoxes.forEach((box) => {
+      const card = document.createElement("div");
+      card.classList.add("info-card");
+      
+      const img = document.createElement("img");
+      img.src = box.image;
+      img.alt = box.title;
+
+      const title = document.createElement("h3");
+      title.textContent = box.title;
+
+      const text = document.createElement("p");
+      text.textContent = box.text;
+
+      const textWrap = document.createElement("div");
+      textWrap.appendChild(title);
+      textWrap.appendChild(text);
+
+      card.appendChild(img);
+      card.appendChild(textWrap);
+
+      infoCardsContainer.appendChild(card);
+    });
+  }
 
 
-    // lets add the p to the selected hotspot
-        selected.appendChild(imageElement);
-        selected.appendChild(titleElement);
-        selected.appendChild(textElement);
+  // This hides the cards on desktop
+function toggleCardsForViewport() {
+  const isDesktop = window.innerWidth > 768;
+  if (!infoCardsContainer) return;
 
-  });
+  if (isDesktop) {
+    infoCardsContainer.style.display = 'none';
+    infoCardsContainer.textContent = '';
+  
+  } else {
+    // this show and populate once on mobile
+    infoCardsContainer.style.display = '';
+    if (!infoCardsContainer.hasChildNodes()) {
+      fillMobileCards();
+    }
+  }
 }
 
- fillInfo();
-
-  // since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
   function revealInfo() {
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { 
-      duration: 1, 
-      autoAlpha: 1 });
+    const selected = document.querySelector(`#${this.slot}`);
+    if (selected) gsap.to(selected, { duration: 1, autoAlpha: 1 });
   }
 
   function dismissInfo() {
-    let selected = document.querySelector(`#${this.slot}`);
-    gsap.to(selected, { 
-      duration: 1, 
-      autoAlpha: 0 });
+    const selected = document.querySelector(`#${this.slot}`);
+    if (selected) gsap.to(selected, { duration: 1, autoAlpha: 0 });
   }
 
 
-  // EVENT LISTENERS
+
+  // for screens smaller than 768px 
+  function handleResponsive() {
+    const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+
+//mobile show info cards 
+  fillMobileCards();
+
   hotspots.forEach(function (hotspot) {
+
     hotspot.addEventListener("mouseenter", revealInfo);
     hotspot.addEventListener("mouseleave", dismissInfo);
-    
   });
 
+} else {
+  //desktop show info on hotspots
+  fillHotspots();
+
+  hotspots.forEach(function (hotspot) {
+
+    hotspot.addEventListener("mouseenter", revealInfo);
+    hotspot.addEventListener("mouseleave", dismissInfo);
+  });
+}
+
+  }
 
 
+handleResponsive();
+toggleCardsForViewport();
+window.addEventListener("resize", handleResponsive);
+window.addEventListener('resize', toggleCardsForViewport);
+
+
+})();
+(() => {
+
+  // VARIABLES
+  const hotspots = document.querySelectorAll(".Hotspot");
+  const infoCardsContainer = document.querySelector(".info-cards");
+
+  // the info of my hotspots / cards
+  const infoBoxes = [
+    {
+      title: "All-Day. All-Week. All Go.",
+      text: "Enjoy up to 36 hours of playtime with the compact, pocket-friendly charging case.",
+      image: "images/model-icons/battery.png"
+    },
+    {
+      title: "All-Day comfort",
+      text: "With four ear tip sizes (XS, S, M, L), the acoustic seal adapts for secure fit and sound.",
+      image: "images/model-icons/comfort.png"
+    },
+    {
+      title: "Noise Cancelling",
+      text: "Active Noise Cancelling continuously blocks external sounds for clear audio.",
+      image: "images/model-icons/noisec.png"
+    },
+    {
+      title: "Controls - At Your Fingertips",
+      text: "On-ear controls let you manage music, modes, calls and voice assistant.",
+      image: "images/model-icons/fingertips.png"
+    }
+  ];
+
+  // FUNCTIONS
+
+  // this creates the content for the hotspots on desktop
+  function fillHotspots() {
+    infoBoxes.forEach((infoBox, index) => {
+      const selected = document.querySelector(`#hotspot${index + 1}`);
+      if (!selected) return;
+
+      selected.replaceChildren();
+
+      const img = document.createElement("img");
+      img.src = infoBox.image;
+      img.alt = infoBox.title;
+
+      const title = document.createElement("h2");
+      title.textContent = infoBox.title;
+
+      const text = document.createElement("p");
+      text.textContent = infoBox.text;
+
+      selected.appendChild(img);
+      selected.appendChild(title);
+      selected.appendChild(text);
+    });
+  }
+
+  // this creates and shows the cards for mobile view
+  function fillMobileCards() {
+    if (!infoCardsContainer) return;
+
+    // this helps to avoid duplicating cards on resize
+    infoCardsContainer.innerHTML = "";
+
+    infoBoxes.forEach((box) => {
+      const card = document.createElement("div");
+      card.classList.add("info-card");
+      
+      const img = document.createElement("img");
+      img.src = box.image;
+      img.alt = box.title;
+
+      const title = document.createElement("h3");
+      title.textContent = box.title;
+
+      const text = document.createElement("p");
+      text.textContent = box.text;
+
+      const textWrap = document.createElement("div");
+      textWrap.appendChild(title);
+      textWrap.appendChild(text);
+
+      card.appendChild(img);
+      card.appendChild(textWrap);
+
+      infoCardsContainer.appendChild(card);
+    });
+  }
+
+
+  // This hides the cards on desktop
+function toggleCardsForViewport() {
+  const isDesktop = window.innerWidth > 768;
+  if (!infoCardsContainer) return;
+
+  if (isDesktop) {
+    infoCardsContainer.style.display = 'none';
+    infoCardsContainer.textContent = '';
   
+  } else {
+    // this show and populate once on mobile
+    infoCardsContainer.style.display = '';
+    if (!infoCardsContainer.hasChildNodes()) {
+      fillMobileCards();
+    }
+  }
+}
+
+  function revealInfo() {
+    const selected = document.querySelector(`#${this.slot}`);
+    if (selected) gsap.to(selected, { duration: 1, autoAlpha: 1 });
+  }
+
+  function dismissInfo() {
+    const selected = document.querySelector(`#${this.slot}`);
+    if (selected) gsap.to(selected, { duration: 1, autoAlpha: 0 });
+  }
+
+
+
+  // for screens smaller than 768px 
+  function handleResponsive() {
+    const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+
+//mobile show info cards 
+  fillMobileCards();
+
+  hotspots.forEach(function (hotspot) {
+
+    hotspot.addEventListener("mouseenter", revealInfo);
+    hotspot.addEventListener("mouseleave", dismissInfo);
+  });
+
+} else {
+  //desktop show info on hotspots
+  fillHotspots();
+
+  hotspots.forEach(function (hotspot) {
+
+    hotspot.addEventListener("mouseenter", revealInfo);
+    hotspot.addEventListener("mouseleave", dismissInfo);
+  });
+}
+
+  }
+
+
+handleResponsive();
+toggleCardsForViewport();
+window.addEventListener("resize", handleResponsive);
+window.addEventListener('resize', toggleCardsForViewport);
+
+
 })();
