@@ -1,11 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer class="s-col-span-full m-col-span-full l-col-span-full" src="model/single-earbud3.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0.95" exposure="1.28" shadow-softness="1">
+      <button class="Hotspot" slot="hotspot1" data-position="-0.002855336026966421m 0.004829067539208792m -0.010952803609859542m" data-normal="-0.15052554581234615m 0.3729813596554135m -0.9155473583641068m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation" id="hotspot1">
+            </div>
+                
+
+      </button><button class="Hotspot" slot="hotspot2" data-position="-0.015454943361230369m -0.002100186344783813m -0.010563733988573645m" data-normal="-0.48974917935826756m 0.5033060699368075m 0.7119190552883585m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation" id="hotspot2">
+            
+          </div>
+          
+      </button><button class="Hotspot" slot="hotspot3" data-position="0.009038372262948971m 0.005470783784050346m 0.005158417404735577m" data-normal="0.8596130956899893m 0.5097155333864775m 0.035431634774761814m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation" id="hotspot3">
+          </div>
+
+      </button><button class="Hotspot" slot="hotspot4" data-position="-0.0009990907327491992m -0.0007045228207383193m 0.008901919005438685m" data-normal="0m 0m 1m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation" id="hotspot4">
+            
+          </div>
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
     
-</body>
+    </model-viewer>  
+   <div class="info-cards"></div>
+    
+       <!-- link to greensock main library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <!-- Our JS folder last -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
