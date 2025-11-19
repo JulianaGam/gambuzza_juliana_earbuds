@@ -5,9 +5,54 @@
     <meta charset="utf-8">
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/grid.css" rel="stylesheet"/>
   </head>
   <body>
+
+    <header class="grid-con" id="main-header">
+  <!-- BURGER -->
+      <button id="burger-button" aria-label="Toggle Menu" class=" m-col-start-1 m-col-span-2 l-col-start-1 l-col-span-1"></button>
+
+
+  <!-- beats logo  -->
+  <section id="beats-logo"
+    class="col-start-2 col-span-2 m-col-start-2 m-col-span-2 l-col-start-3 l-col-span-2">
+    <h1 class="hidden">Beats Studio + harry potter</h1>
+    <img src="images/logos/beats-logo.svg" alt="Beats Logo">
+  </section>
+
+
+  <!-- NAV  -->
+  <nav id="main-nav" class="l-col-start-4 l-col-end-9">
+    <div id="burger-con">
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Products</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- go to bag button -->
+  <div class="go-to-bag m-col-start-10 m-col-span-3 l-col-start-10 l-col-span-2">
+    <button class="go-to-bag-button" aria-label="go to Bag">
+      GO TO BAG <span class="apple-icon"></span>
+    </button>
+  </div>
+   <!-- search icon button -->
+  <div class="search-icon col-start-4 col-span-1 m-col-start-12 m-col-span-1 l-col-start-12 l-col-span-1">
+    <button id="search-button" aria-label="search">
+      <img src="images/logos/search-icon.png" alt="Search Icon">
+    </button>
+  </div>
+</header>
+
+
     <!-- <model-viewer> HTML element -->
     <model-viewer class="s-col-span-full m-col-span-full l-col-span-full" src="model/single-earbud3.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0.95" exposure="1.28" shadow-softness="1">
       <button class="Hotspot" slot="hotspot1" data-position="-0.002855336026966421m 0.004829067539208792m -0.010952803609859542m" data-normal="-0.15052554581234615m 0.3729813596554135m -0.9155473583641068m" data-visibility-attribute="visible">
@@ -35,6 +80,125 @@
     
     </model-viewer>  
    <div class="info-cards"></div>
+
+
+  <!-- footer -->
+<footer id="main-footer" class="grid-con">
+  <!-- mobile footer for dropdowns -->
+  <section id="footer-mobile" class="footer-items col-span-full  m-col-span-full">
+    <details>
+      <summary>Products</summary>
+      <div>
+        <ul>
+          <li><a href="#">Featured Products</a></li>
+          <li><a href="#">Special Offers</a></li>
+          <li><a href="#">Beats Studio Buds +</a></li>
+          <li><a href="#">Beats Studio Buds + x Harry Potter</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Support</summary>
+      <div>
+        <ul>
+          <li><a href="#">Product Help</a></li>
+          <li><a href="#">Service &amp; Warranty</a></li>
+          <li><a href="#">Contact Support</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Company</summary>
+      <div>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Legal</summary>
+      <div>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+    <!-- follow us section -->
+<section id="footer-follow-mob" class="col-span-full m-col-span-full l-col-start-11 l-col-span-3">
+    <h3 class="hidden">Follow Us</h3>
+    <div class="footer-social-icons">
+      <a href="#"><img src="images/social-icons/twitter.png" alt="X"></a>
+      <a href="#"><img src="images/social-icons/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/social-icons/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="images/social-icons/instagram.png" alt="Instagram"></a>
+    </div>
+  </section>
+
+  <!-- desktop footer columns -->
+  <section id="footer-desktop" class="col-span-full">
+    <div class="l-col-start-1 l-col-span-3">
+    <h3>Products</h3>
+    <ul>
+      <li><a href="#">Featured Products</a></li>
+      <li><a href="#">Special Offers</a></li>
+      <li><a href="#">Beats Studio Buds +</a></li>
+      <li><a href="#">Beats Studio Buds + x Harry Potter</a></li>
+    </ul>
+  </div>
+
+  <div class="l-col-start-4 l-col-span-3">
+    <h3>Support</h3>
+    <ul>
+      <li><a href="#">Product Help</a></li>
+      <li><a href="#">Service &amp; Warranty</a></li>
+      <li><a href="#">Contact Support</a></li>
+    </ul>
+  </div>
+
+  <div class="l-col-start-7 l-col-end-8">
+    <h3>Company</h3>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Careers</a></li>
+    </ul>
+  </div>
+
+  <div class="l-col-start-9 l-col-span-2">
+    <h3>Legal</h3>
+    <ul>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </div>
+
+    <!-- follow us section -->
+<section id="footer-follow" class="col-span-full m-col-span-full l-col-start-11 l-col-span-3">
+    <h3>Follow Us</h3>
+    <div class="footer-social-icons">
+      <a href="#"><img src="images/social-icons/twitter.png" alt="X"></a>
+      <a href="#"><img src="images/social-icons/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/social-icons/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="images/social-icons/instagram.png" alt="Instagram"></a>
+    </div>
+  </section>
+</section>
+
+
+
+  <section class="footer-bottom col-span-full m-col-span-full l-col-span-full">
+    <p>© 2025 Beats Studio Buds x Harry Potter - For educational purposes only</p>
+  </section>
+</footer>
+
+
+
+
     
        <!-- link to greensock main library -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
