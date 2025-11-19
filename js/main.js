@@ -27,6 +27,11 @@
     }
   ];
 
+    // Burger menu
+    const burgerButton = document.querySelector("#burger-button");
+    const burgerCon = document.querySelector("#burger-con");
+
+  // FUNCTIONS
 
   // FUNCTIONS 
 
