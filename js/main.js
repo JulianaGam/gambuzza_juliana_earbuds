@@ -28,6 +28,10 @@
     }
   ];
 
+    // Burger menu
+    const burgerButton = document.querySelector("#burger-button");
+    const burgerCon = document.querySelector("#burger-con");
+
   // FUNCTIONS
 
   // this creates the content for the hotspots on desktop
@@ -145,12 +149,25 @@ function toggleCardsForViewport() {
 
   }
 
+   // Burger menu open and close
+  function hamburgerMenu() {
+    if (!burgerCon || !burgerButton) return;
+    burgerCon.classList.toggle("slide-toggle");
+    burgerButton.classList.toggle("expanded");
+  } 
 
+
+// EVENT LISTENERS
 handleResponsive();
 toggleCardsForViewport();
 window.addEventListener("resize", handleResponsive);
 window.addEventListener('resize', toggleCardsForViewport);
 
+
+  // listener del burger
+  if (burgerButton && burgerCon) {
+    burgerButton.addEventListener("click", hamburgerMenu, false);
+  }
 
 })();
 (() => {
