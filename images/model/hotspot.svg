@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15.56" height="15.56" viewBox="0 0 15.56 15.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ababab;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #cfcfcf;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="7.78" cy="7.78" r="6.04"/>
+  <circle class="cls-2" cx="7.78" cy="7.78" r="6.66"/>
+  <circle class="cls-2" cx="7.78" cy="7.78" r="7.53"/>
+</svg>

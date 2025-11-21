@@ -27,6 +27,9 @@
     }
   ];
 
+    // Burger menu
+    const burgerButton = document.querySelector("#burger-button");
+    const burgerCon = document.querySelector("#burger-con");
 
   // FUNCTIONS 
 
@@ -131,12 +134,23 @@
       });
     }
   }
+// Hamburger menu toggle - open close
+    function hamburgerMenu() {
+    if (!burgerCon || !burgerButton) return;
+    burgerCon.classList.toggle("slide-toggle");
+    burgerButton.classList.toggle("expanded");
+  }
 
-  // EVENT LISTENERS 
+// EVENT LISTENERS 
 
   handleResponsive();
   toggleCardsForViewport();
   window.addEventListener("resize", handleResponsive);
   window.addEventListener("resize", toggleCardsForViewport);
+
+    // listener for burger
+  if (burgerButton && burgerCon) {
+    burgerButton.addEventListener("click", hamburgerMenu, false);
+  }
 
 })();

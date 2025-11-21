@@ -1,0 +1,230 @@
+
+#main-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #ffffff;
+}
+
+/* Logo Beats */
+
+#beats-logo {
+  justify-self: center;
+}
+
+#beats-logo img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+/* Icono Apple dentro del botón */
+
+.apple-icon {
+  font-size: 20px;
+}
+
+/* Nav / Burger */
+
+#main-nav {
+  grid-column: 1 / -1;
+}
+
+#main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+  margin-left: 30px;
+}
+
+/* Contenedor del menú desplegable */
+
+#burger-con {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: #ffffff;
+  padding: 16px 24px 24px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#burger-con.slide-toggle {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Botón burger */
+
+#burger-button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: url(../images/logos/burger-menu.svg) no-repeat center;
+  background-size: contain;
+  grid-column: 1;
+  justify-self: start;
+  margin-left: 8px;
+  position: relative;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+#burger-button.expanded {
+  transform: rotate(90deg);
+}
+
+/* Items del menú en mobile */
+
+#burger-con ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#burger-con li a {
+  display: block;
+  padding: 15px 0;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Botón GO TO BAG (oculto en mobile) */
+
+.go-to-bag {
+  display: none;
+}
+
+.go-to-bag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.go-to-bag-button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* Search icon */
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  margin: 0;
+}
+
+#search-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+#search-button img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  transition: transform 0.2s ease;
+  margin-top: -30px;
+}
+
+#search-button:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media screen and (min-width: 768px) {
+  #beats-logo {
+    justify-self: center;
+    margin-left: 80px;
+  }
+}
+
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media screen and (min-width: 1200px) {
+  #main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    background-color: #ffffff;
+  }
+
+  #burger-button {
+    display: none;
+  }
+
+  #main-nav {
+    position: static;
+  }
+
+  #burger-con {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #main-nav ul {
+    display: flex;
+    gap: 56px;
+    justify-content: center;
+  }
+
+  #main-nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ff0011;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 10px;
+  }
+
+  .go-to-bag {
+    display: flex;
+    align-items: center;
+  }
+
+  #beats-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #search-button img {
+    margin-top: -15px;
+  }
+}
