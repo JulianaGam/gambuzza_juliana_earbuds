@@ -1,0 +1,176 @@
+@use "../abstracts" as a;
+
+#xray-section {
+  padding: 60px 40px 80px;
+}
+
+#xray-title-block {
+  margin-bottom: 16px;
+}
+
+#xray-title {
+  font-size: 35px;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+
+#xray-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+#xray {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-image: url(../images/xray/earbud.jpg);
+  background-size: cover;
+  border-radius: 15px;
+  margin-top: 25px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#divisor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;   
+  height: 100%;
+  background-image: url(../images/xray/earbud-x-ray.jpg);
+  background-size: cover;
+  border-radius: 15px;
+}
+
+#divisor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;   
+  width: 2px;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.4);
+}
+
+
+#slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: -18px 0 0;
+  background: transparent;
+  height: 34px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  top: -300px;            
+  left: 0;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  height: 30px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+
+
+#slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+  border: none;
+}
+
+#slider::-moz-range-track {
+  height: 4px;
+  background: transparent;
+  border: none;
+}
+
+
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  margin-top: 545px;
+}
+
+
+
+#slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  background: rgb(238, 238, 238);
+  transform: scale(1.1);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+
+@media screen and (min-width: 500px) {
+  input[type="range"] {
+    top: -320px;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+  input[type="range"] {
+    top: -40px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  input[type="range"] {
+    top: -30px;
+  }
+
+  #xray-section {
+    padding: 60px 100px 80px;
+  }
+
+  #xray-title {
+    font-size: 44px;
+    line-height: 1.05;
+    margin: 0 0 6px;
+  }
+
+  #xray-text {
+    font-size: 18px;
+  }
+}
