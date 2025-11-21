@@ -3,7 +3,15 @@ A promotional site for the Harry Potter x Beats special-edition earbuds celebrat
 <img src="images/posters/img-2-hp.png" alt="Poster" width="800">
 
 
-##  🧩Skills
+## Table of Contents 📋
+
+Skills🧩
+Languages🛠️
+Features 📋
+Installation
+Contact 📬
+
+##  Skills🧩
 
 Web: HTML5, CSS3/SASS, JavaScript, layouts responsive, CSS Grid
 
@@ -15,14 +23,31 @@ Visual: Modelado y renders en Cinema 4D, assets para web y promo
 
 Workflow: VS Code, Git/GitHub (ramas, merges, resolución de conflic
 
-## 📬 Contact
+
+## Languages: 🛠️
+JavaScript
+HTML5
+CSS3
+Sass
+gsap
+
+## Features 📋
+
+Grid system 
+Fully responsive 
+Valid HTML and css
+gsap animations
+
+## Installation
+Not need it. Download the Zip file.
+
+
+## Contact 📬
 
 LinkedIn: Juliana Gambuzza
 
 Email: julianagambuzza@gmail.com 🌸
 
-## Installation
-Not need it. Download the Zip file.
 
 ## Usage
 Open the Index file in the browser of preference.
