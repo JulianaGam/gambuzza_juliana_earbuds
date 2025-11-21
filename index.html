@@ -1,46 +1,363 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; template</title>
     <meta charset="utf-8">
-    <meta name="description" content="&lt;model-viewer&gt; template">
+    <title>Beats x Harry Potter Special Edition</title>
+    <meta name="description" content="Beats Studio Buds + x Harry Potter promotional website with AR model, animations, and interactive features.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/main.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
   </head>
+
   <body>
+    <!-- header -->
+    <header class="grid-con" id="main-header">
+      <!-- burger menu -->
+      <button
+        id="burger-button"
+        aria-label="Toggle Menu"
+        class="m-col-start-1 m-col-span-2 l-col-start-1 l-col-span-1"
+      ></button>
+
+      <!-- logo -->
+      <section
+        id="beats-logo"
+        class="col-start-2 col-span-2 m-col-start-2 m-col-span-2 l-col-start-3 l-col-span-2"
+      >
+        <h1 class="hidden">Beats Studio Buds + x Harry Potter</h1>
+        <img src="images/logos/beats-logo.svg" alt="Beats logo">
+      </section>
+
+      <!-- nav -->
+      <nav id="main-nav" class="l-col-start-4 l-col-end-9">
+        <div id="burger-con">
+          <ul>
+            <li><a href="https://www.beatsbydre.com/ca/products">Shop</a></li>
+            <li><a href="https://www.beatsbydre.com/ca/support">Support</a></li>
+            <li><a href="https://www.beatsbydre.com/ca/products">Products</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- bag button -->
+      <div class="go-to-bag m-col-start-10 m-col-span-3 l-col-start-10 l-col-span-2">
+        <button class="go-to-bag-button" aria-label="Go to bag">
+          GO TO BAG 
+        </button>
+      </div>
+
+      <!-- seacrh icon -->
+      <div class="search-icon col-start-4 col-span-1 m-col-start-12 m-col-span-1 l-col-start-12 l-col-span-1">
+        <button id="search-button" aria-label="Search">
+          <img src="images/logos/search-icon.png" alt="Search icon">
+        </button>
+      </div>
+    </header>
+
+    <main>
+       <!-- Scroll section -->
+      <section id="explode-section" class="grid-con">
+        <h2 class="hidden">Scroll animation</h2>
+        <div class="col-span-full m-col-span-full l-col-span-full">
+          <canvas id="explode-view"></canvas>
+        </div>
+      </section>
+
+      <!-- Product section -->
+      <section id="product-section" class="grid-con">
+       
+        <div id="product-media" class="col-span-full m-col-span-6 l-col-span-6">
+          <div id="product-title-block">
+            <h2 id="product-title" class="l-col-span-full">Beats Studio Buds + x Harry Potter</h2>
+            <p id="product-text">Magical Sound. Perfect Fit.</p>
+          </div>
+
+          <div id="product-main">
+            <img
+              src="images/products/hp.jpg"
+              alt="Beats Studio Buds + in HP Black and Gold"
+            >
+          </div>
+
+          <div id="product-thumbs">
+            <button class="product-thumb is-selected" data-index="0">
+              <img src="images/products/hp.jpg" alt="HP Black and Gold - View 1">
+            </button>
+            <button class="product-thumb" data-index="1">
+              <img src="images/products/hp2.png" alt="HP Black and Gold - View 2">
+            </button>
+            <button class="product-thumb" data-index="2">
+              <img src="images/products/hp3.png" alt="HP Black and Gold - View 3">
+            </button>
+          </div>
+        </div>
+
+        <!-- eaerbuds data -->
+        <div id="product-info" class="col-span-full m-col-span-6 l-col-span-5">
+          <h3 id="product-price">$229.95</h3>
+
+          <p class="product-colour-line">
+            Color: <span id="product-colour-name">HP Black / Gold</span>
+          </p>
+
+          <div id="colour-picker">
+            <button id="hp"   class="colour-dot is-selected" aria-label="HP Black / Gold"></button>
+            <button id="gry"  class="colour-dot" aria-label="Gryffindor Red"></button>
+            <button id="sly"  class="colour-dot" aria-label="Slytherin Green"></button>
+            <button id="huff" class="colour-dot" aria-label="Hufflepuff Yellow"></button>
+            <button id="rav"  class="colour-dot" aria-label="Ravenclaw Blue"></button>
+          </div>
+
+          <button class="go-to-bag-button product-bag" id="product-button">
+            ADD TO BAG 
+          </button>
+
+          <div id="product-perks">
+            <ul class="product-benefits">
+              <li>
+                <h4>Speedy, Free Shipping</h4>
+                <p>Get quick, no-cost delivery on all in-stock products.</p>
+              </li>
+              <li>
+                <h4>Easy Returns</h4>
+                <p>Send back eligible items within 15 days of receiving them.</p>
+              </li>
+              <li>
+                <h4>Free Music Trial</h4>
+                <p>Enjoy 3 months of ad-free access to over 100 million tracks.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Xray slider-->
+
+      <section id="xray-section" class="grid-con">
+        <div id="xray-title-block" class="col-span-full m-col-span-full l-col-span-full">
+          <h2 id="xray-title">Explore what is inside the design</h2>
+          <p id="xray-text">
+            Slide to reveal how every magical detail is engineered inside the Beats Studio Buds + x Harry Potter.
+          </p>
+        </div>
+
+        <div class="col-span-full m-col-span-full l-col-span-full" id="xray-container">
+          <div id="xray">
+            <div id="divisor"></div>
+            <input type="range" min="0" max="100" value="50" id="slider" aria-label="X-ray slider">
+          </div>
+        </div>
+      </section>
+
+<!-- Hotspots -->
+
+      <section id="hotspot-section" class="grid-con">
+        <h2 class="col-span-full m-col-span-full l-col-span-full" id="hotspot-title">
+          Discover every magical detail
+        </h2>
+
+        <p class="col-span-full m-col-span-6 l-col-span-6 hotspot-text">
+          Slide, tap and explore how each part is crafted to deliver immersive, magical sound in every moment.
+        </p>
+      
+      </section>
+
     <!-- <model-viewer> HTML element -->
     <model-viewer class="s-col-span-full m-col-span-full l-col-span-full" src="model/single-earbud3.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0.95" exposure="1.28" shadow-softness="1">
       <button class="Hotspot" slot="hotspot1" data-position="-0.002855336026966421m 0.004829067539208792m -0.010952803609859542m" data-normal="-0.15052554581234615m 0.3729813596554135m -0.9155473583641068m" data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot1">
-            </div>
+          <span class="HotspotAnnotation" id="hotspot1">
+            </span>
                 
 
       </button><button class="Hotspot" slot="hotspot2" data-position="-0.015454943361230369m -0.002100186344783813m -0.010563733988573645m" data-normal="-0.48974917935826756m 0.5033060699368075m 0.7119190552883585m" data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot2">
+          <span class="HotspotAnnotation" id="hotspot2">
             
-          </div>
+          </span>
           
       </button><button class="Hotspot" slot="hotspot3" data-position="0.009038372262948971m 0.005470783784050346m 0.005158417404735577m" data-normal="0.8596130956899893m 0.5097155333864775m 0.035431634774761814m" data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot3">
-          </div>
+          <span class="HotspotAnnotation" id="hotspot3">
+          </span>
 
       </button><button class="Hotspot" slot="hotspot4" data-position="-0.0009990907327491992m -0.0007045228207383193m 0.008901919005438685m" data-normal="0m 0m 1m" data-visibility-attribute="visible">
-          <div class="HotspotAnnotation" id="hotspot4">
+          <span class="HotspotAnnotation" id="hotspot4">
             
-          </div>
+          </span>
       </button>
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
     
     </model-viewer>  
-   <div class="info-cards"></div>
+
+    <!-- mobile hotspots -->
+     <section>
+      <h2 class="hidden">hotspots mobile</h2>
+        <div class="info-cards col-span-full m-col-span-full l-col-span-full"></div>
+    </section>
+  
+
+      <!-- box section -->
+      <section id="box-section" class="grid-con">
     
-       <!-- link to greensock main library -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
+        <div id="box-text" class="col-span-full m-col-span-5 l-col-span-4">
+          <h2 id="box-title">What is in the box</h2>
+
+          <ul id="box-list">
+            <li>Beats Studio Buds + x Harry Potter</li>
+            <li>House-themed pocketable charging case</li>
+            <li>Ear tips with four size options</li>
+            <li>House-coloured USB-C to USB-C charging cable</li>
+            <li>Warranty card</li>
+          </ul>
+
+          <p id="box-footnote">(USB-C power adapter sold separately.)</p>
+        </div>
+
+        <!-- imgs  -->
+        <div id="box-cards" class="col-span-full m-col-span-7 l-col-span-8">
+          <div class="box-card box-card-1"></div>
+          <div class="box-card box-card-2"></div>
+          <div class="box-card box-card-3"></div>
+        </div>
+      </section>
+
+      <!-- video-->
+      <section id="promo-video-section" class="grid-con">
+        <div class="col-span-full m-col-span-full l-col-span-full">
+          <div class="promo-video">
+            <h3 class="hidden">Promotional video</h3>
+            <video
+              src="video/animation-case-final.mp4" autoplay loop muted playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER  -->
+    <footer id="main-footer" class="grid-con">
+      <!-- mobile dropdowns -->
+      <section id="footer-mobile" class="footer-items col-span-full m-col-span-full">
+          <h2 class="hidden">Footer navigation</h2>
+        <details>
+          <summary>Products</summary>
+          <div>
+            <ul>
+              <li><a href="https://www.beatsbydre.com/products">Featured Products</a></li>
+            <li><a href="https://www.beatsbydre.com/promotions">Special Offers</a></li>
+            <li><a href="https://www.beatsbydre.com/headphones/studio-pro-wireless">Beats Studio Buds +</a></li>
+            <li><a href="index.html">Beats Studio Buds + x Harry Potter</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Support</summary>
+          <div>
+            <ul>
+              <li><a href="https://www.beatsbydre.com/support">Product Help</a></li>
+            <li><a href="https://support.apple.com/beats/repair">Service and Warranty</a></li>
+            <li><a href="getsupport.apple.com/?caller=bbd&PFC=PFC6007">Contact Support</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Company</summary>
+          <div>
+            <ul>
+              <li><a href="https://www.beatsbydre.com/company/aboutus">About</a></li>
+            <li><a href="https://jobs.apple.com/en-us/search?sort=relevance&search=beats">Careers</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Legal</summary>
+          <div>
+            <ul>
+              <li><a href="https://www.beatsbydre.com/ca/company/legal">Terms of Use</a></li>
+              <li><a href="https://www.beatsbydre.com/company/legal">Privacy</a></li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- follow section -->
+      <section id="footer-follow-mob" class="col-span-full m-col-span-full l-col-start-11 l-col-span-3">
+        <h3 class="hidden">Follow Us</h3>
+        <div class="footer-social-icons">
+          <a href="#"><img src="images/social-icons/twitter.png" alt="X"></a>
+          <a href="#"><img src="images/social-icons/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="images/social-icons/youtube.png" alt="YouTube"></a>
+          <a href="#"><img src="images/social-icons/instagram.png" alt="Instagram"></a>
+        </div>
+      </section>
+
+      <!-- Ddesktop footer -->
+      <section id="footer-desktop" class="col-span-full">
+        <div class="l-col-start-1 l-col-span-3">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://www.beatsbydre.com/products">Featured Products</a></li>
+            <li><a href="https://www.beatsbydre.com/promotions">Special Offers</a></li>
+            <li><a href="https://www.beatsbydre.com/headphones/studio-pro-wireless">Beats Studio Buds +</a></li>
+            <li><a href="index.html">Beats Studio Buds + x Harry Potter</a></li>
+          </ul>
+        </div>
+
+        <div class="l-col-start-4 l-col-span-3">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="https://www.beatsbydre.com/support">Product Help</a></li>
+            <li><a href="https://support.apple.com/beats/repair">Service and Warranty</a></li>
+            <li><a href="getsupport.apple.com/?caller=bbd&PFC=PFC6007">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="l-col-start-7 l-col-end-8">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="https://www.beatsbydre.com/company/aboutus">About</a></li>
+            <li><a href="https://jobs.apple.com/en-us/search?sort=relevance&search=beats">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="l-col-start-9 l-col-span-2">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="https://www.beatsbydre.com/ca/company/legal">Terms of Use</a></li>
+            <li><a href="https://www.beatsbydre.com/company/legal">Privacy</a></li>
+          </ul>
+        </div>
+
+        <!-- follow us desktop -->
+        <section id="footer-follow" class="col-span-full m-col-span-full l-col-start-11 l-col-span-3">
+          <h3>Follow Us</h3>
+          <div class="footer-social-icons">
+            <a href="https://x.com/beatsbydre"><img src="images/social-icons/twitter.png" alt="X"></a>
+            <a href="https://www.facebook.com/beatsbydre"><img src="images/social-icons/facebook.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/beatsbydre"><img src="images/social-icons/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/beatsbydre"><img src="images/social-icons/instagram.png" alt="Instagram"></a>
+          </div>
+        </section>
+      </section>
+
+      <div class="footer-bottom col-span-full m-col-span-full l-col-span-full">
+        <p>© 2025 Beats Studio Buds x Harry Potter — For educational purposes only.</p>
+      </div>
+    </footer>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <!-- Our JS folder last -->
+
     <script src="js/main.js"></script>
   </body>
 </html>
