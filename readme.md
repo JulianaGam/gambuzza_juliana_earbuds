@@ -1,15 +1,22 @@
 # Harry Potter x Beats website 
-A promotional site for the Harry Potter x Beats special-edition earbuds celebrating the 25th anniversary of the first film’s release, featuring an interactive 3D model, X-ray slider, Product filter, gsap animations, scroll animation.
+
+**A promotional site for the Harry Potter x Beats special-edition earbuds celebrating the 25th anniversary of the first film’s release, featuring an interactive 3D model, X-ray slider, Product filter, gsap animations, scroll animation.**
+
+
 <img src="images/posters/img-2-hp.png" alt="Poster" width="800">
 
 
 ## Table of Contents 📋
 
-Skills🧩
-Languages🛠️
-Features 📋
-Installation
-Contact 📬
+- Skills🧩
+
+- Languages🛠️
+
+- Features 📋
+
+- Installation
+
+- Contact 📬
 
 ##  Skills🧩
 
@@ -21,22 +28,27 @@ Interacción: GSAP + ScrollTrigger, sliders, scroll animations, hover states
 
 Visual: Modelado y renders en Cinema 4D, assets para web y promo
 
-Workflow: VS Code, Git/GitHub (ramas, merges, resolución de conflic
+Workflow: VS Code, Git/GitHub 
 
 
 ## Languages: 🛠️
-JavaScript
-HTML5
-CSS3
-Sass
-gsap
+
+- JavaScript
+
+- HTML5
+
+- CSS3
+
+- Sass
+
+- gsap
 
 ## Features 📋
 
-Grid system 
-Fully responsive 
-Valid HTML and css
-gsap animations
+- Grid system 
+- Fully responsive 
+- Valid HTML and css
+- gsap animations
 
 ## Installation
 Not need it. Download the Zip file.
