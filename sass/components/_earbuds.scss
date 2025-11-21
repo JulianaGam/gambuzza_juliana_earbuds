@@ -1,0 +1,42 @@
+
+// hero section
+@media screen and (min-width: 412px) {
+#explode-view {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    background-image: url("../images/hero/background-m.jpg");
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; 
+    
+  }}
+
+  @media screen and (min-width: 768px) {
+#explode-view {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-image: url("../images/hero/background-t.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+        
+  }}
+
+
+@media screen and (min-width: 1200px) {
+ #explode-view {
+  width: 100%;              
+height: 100vh;
+background-image: url("../images/hero/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; 
+
+  }
+}
+
+
+
+
